@@ -1,0 +1,56 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.RandomForest -I 100 -K 0 -S 1
+Relation:     Heart-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    303
+Attributes:   14
+              Age
+              Sex
+              ChestPain
+              RestBP
+              Chol
+              Fbs
+              RestECG
+              MaxHR
+              ExAng
+              Oldpeak
+              Slope
+              Ca
+              Thal
+              AHD
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Random forest of 100 trees, each constructed while considering 4 random features.
+Out of bag error: 0.2013
+
+
+
+Time taken to build model: 0.32 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         246               81.1881 %
+Incorrectly Classified Instances        57               18.8119 %
+Kappa statistic                          0.6201
+Mean absolute error                      0.2688
+Root mean squared error                  0.356 
+Relative absolute error                 54.1256 %
+Root relative squared error             71.4319 %
+Total Number of Instances              303     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.841     0.223      0.817     0.841     0.829      0.902    No
+                 0.777     0.159      0.806     0.777     0.791      0.902    Yes
+Weighted Avg.    0.812     0.193      0.812     0.812     0.812      0.902
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 138  26 |   a = No
+  31 108 |   b = Yes
+

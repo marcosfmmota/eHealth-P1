@@ -1,0 +1,76 @@
+=== Run information ===
+
+Scheme:weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 1 -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
+Relation:     Heart-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    303
+Attributes:   14
+              Age
+              Sex
+              ChestPain
+              RestBP
+              Chol
+              Fbs
+              RestECG
+              MaxHR
+              ExAng
+              Oldpeak
+              Slope
+              Ca
+              Thal
+              AHD
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Bayes Network Classifier
+not using ADTree
+#attributes=14 #classindex=13
+Network structure (nodes followed by parents)
+Age(2): AHD 
+Sex(2): AHD 
+ChestPain(4): AHD 
+RestBP(1): AHD 
+Chol(1): AHD 
+Fbs(1): AHD 
+RestECG(1): AHD 
+MaxHR(2): AHD 
+ExAng(2): AHD 
+Oldpeak(2): AHD 
+Slope(2): AHD 
+Ca(5): AHD 
+Thal(4): AHD 
+AHD(2): 
+LogScore Bayes: -2195.1003557482622
+LogScore BDeu: -2242.4992662012855
+LogScore MDL: -2246.3116187023506
+LogScore ENTROPY: -2152.0350274114453
+LogScore AIC: -2185.0350274114453
+
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         251               82.8383 %
+Incorrectly Classified Instances        52               17.1617 %
+Kappa statistic                          0.6537
+Mean absolute error                      0.1924
+Root mean squared error                  0.365 
+Relative absolute error                 38.7314 %
+Root relative squared error             73.2407 %
+Total Number of Instances              303     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.854     0.201      0.833     0.854     0.843      0.906    No
+                 0.799     0.146      0.822     0.799     0.81       0.906    Yes
+Weighted Avg.    0.828     0.176      0.828     0.828     0.828      0.906
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 140  24 |   a = No
+  28 111 |   b = Yes
+

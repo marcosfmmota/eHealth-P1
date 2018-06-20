@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {brazilian}
+\beamer@sectionintoc {1}{Introdu\IeC {\c c}\IeC {\~a}o}{2}{0}{1}
+\beamer@sectionintoc {2}{Defini\IeC {\c c}\IeC {\~a}o do problema}{10}{0}{2}
+\beamer@sectionintoc {3}{T\IeC {\'e}cnica e Ferramenta escolhida}{22}{0}{3}
+\beamer@sectionintoc {4}{Base de dados}{29}{0}{4}
+\beamer@sectionintoc {5}{Resultados}{38}{0}{5}

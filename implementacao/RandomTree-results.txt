@@ -1,0 +1,228 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.RandomTree -K 0 -M 1.0 -S 1
+Relation:     Heart-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    303
+Attributes:   14
+              Age
+              Sex
+              ChestPain
+              RestBP
+              Chol
+              Fbs
+              RestECG
+              MaxHR
+              ExAng
+              Oldpeak
+              Slope
+              Ca
+              Thal
+              AHD
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+Oldpeak < 1.7
+|   ChestPain = typical
+|   |   MaxHR < 176
+|   |   |   Sex < 0.5 : No (2/0)
+|   |   |   Sex >= 0.5
+|   |   |   |   RestECG < 1 : Yes (2/0)
+|   |   |   |   RestECG >= 1
+|   |   |   |   |   Age < 55 : No (2/0)
+|   |   |   |   |   Age >= 55
+|   |   |   |   |   |   Chol < 253.5 : No (2/0)
+|   |   |   |   |   |   Chol >= 253.5 : Yes (3/0)
+|   |   MaxHR >= 176 : No (4/0)
+|   ChestPain = asymptomatic
+|   |   MaxHR < 181.5
+|   |   |   Sex < 0.5
+|   |   |   |   RestBP < 142.5
+|   |   |   |   |   Thal = fixed : No (0/0)
+|   |   |   |   |   Thal = normal
+|   |   |   |   |   |   RestBP < 122 : No (6/0)
+|   |   |   |   |   |   RestBP >= 122
+|   |   |   |   |   |   |   Chol < 203
+|   |   |   |   |   |   |   |   ExAng < 0.5 : No (1/0)
+|   |   |   |   |   |   |   |   ExAng >= 0.5 : Yes (1/0)
+|   |   |   |   |   |   |   Chol >= 203
+|   |   |   |   |   |   |   |   Chol < 316.5 : No (7/0)
+|   |   |   |   |   |   |   |   Chol >= 316.5
+|   |   |   |   |   |   |   |   |   Chol < 362 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   Chol >= 362 : No (1/0)
+|   |   |   |   |   Thal = reversable : Yes (2/0)
+|   |   |   |   |   Thal = NA : No (0/0)
+|   |   |   |   RestBP >= 142.5
+|   |   |   |   |   Chol < 316 : Yes (6/0)
+|   |   |   |   |   Chol >= 316 : No (1/0)
+|   |   |   Sex >= 0.5
+|   |   |   |   Thal = fixed
+|   |   |   |   |   Slope < 1.5 : Yes (1/0)
+|   |   |   |   |   Slope >= 1.5
+|   |   |   |   |   |   RestECG < 1 : No (2/0)
+|   |   |   |   |   |   RestECG >= 1 : Yes (2/0)
+|   |   |   |   Thal = normal
+|   |   |   |   |   ExAng < 0.5
+|   |   |   |   |   |   Age < 43.5 : No (3/0)
+|   |   |   |   |   |   Age >= 43.5
+|   |   |   |   |   |   |   Chol < 296
+|   |   |   |   |   |   |   |   Chol < 200.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   Chol >= 200.5
+|   |   |   |   |   |   |   |   |   Oldpeak < 0.05 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   Oldpeak >= 0.05
+|   |   |   |   |   |   |   |   |   |   Age < 60.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   Age >= 60.5 : Yes (1/0)
+|   |   |   |   |   |   |   Chol >= 296 : No (1/0)
+|   |   |   |   |   ExAng >= 0.5 : Yes (7/0)
+|   |   |   |   Thal = reversable
+|   |   |   |   |   RestBP < 143
+|   |   |   |   |   |   Ca = 0.0
+|   |   |   |   |   |   |   Age < 56.5
+|   |   |   |   |   |   |   |   Oldpeak < 0.25
+|   |   |   |   |   |   |   |   |   RestBP < 134
+|   |   |   |   |   |   |   |   |   |   MaxHR < 159.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   MaxHR >= 159.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   RestBP >= 134 : No (1/0)
+|   |   |   |   |   |   |   |   Oldpeak >= 0.25 : Yes (6/0)
+|   |   |   |   |   |   |   Age >= 56.5 : No (3/0)
+|   |   |   |   |   |   Ca = 3.0
+|   |   |   |   |   |   |   RestBP < 125 : No (1/0)
+|   |   |   |   |   |   |   RestBP >= 125 : Yes (1/0)
+|   |   |   |   |   |   Ca = 2.0 : Yes (6/0)
+|   |   |   |   |   |   Ca = 1.0
+|   |   |   |   |   |   |   Age < 63.5 : Yes (9/0)
+|   |   |   |   |   |   |   Age >= 63.5 : No (1/0)
+|   |   |   |   |   |   Ca = NA : Yes (1/0)
+|   |   |   |   |   RestBP >= 143 : Yes (7/0)
+|   |   |   |   Thal = NA : Yes (1/0)
+|   |   MaxHR >= 181.5 : No (5/0)
+|   ChestPain = nonanginal
+|   |   Ca = 0.0
+|   |   |   Age < 63.5
+|   |   |   |   RestBP < 109
+|   |   |   |   |   Chol < 241.5 : No (4/0)
+|   |   |   |   |   Chol >= 241.5
+|   |   |   |   |   |   Chol < 255 : Yes (1/0)
+|   |   |   |   |   |   Chol >= 255 : No (1/0)
+|   |   |   |   RestBP >= 109 : No (36/0)
+|   |   |   Age >= 63.5
+|   |   |   |   Sex < 0.5 : No (6/0)
+|   |   |   |   Sex >= 0.5 : Yes (3/0)
+|   |   Ca = 3.0
+|   |   |   Age < 51 : Yes (1/0)
+|   |   |   Age >= 51 : No (1/0)
+|   |   Ca = 2.0 : No (1/0)
+|   |   Ca = 1.0
+|   |   |   Thal = fixed : Yes (1/0)
+|   |   |   Thal = normal : No (9/0)
+|   |   |   Thal = reversable
+|   |   |   |   Slope < 1.5 : No (3/0)
+|   |   |   |   Slope >= 1.5 : Yes (3/0)
+|   |   |   Thal = NA : No (0/0)
+|   |   Ca = NA : No (2/0)
+|   ChestPain = nontypical
+|   |   Age < 56.5
+|   |   |   Slope < 2.5
+|   |   |   |   RestBP < 166 : No (33/0)
+|   |   |   |   RestBP >= 166 : Yes (1/0)
+|   |   |   Slope >= 2.5
+|   |   |   |   Chol < 234.5 : Yes (1/0)
+|   |   |   |   Chol >= 234.5 : No (1/0)
+|   |   Age >= 56.5
+|   |   |   Ca = 0.0
+|   |   |   |   Oldpeak < 0.15 : No (3/0)
+|   |   |   |   Oldpeak >= 0.15 : Yes (1/0)
+|   |   |   Ca = 3.0 : Yes (1/0)
+|   |   |   Ca = 2.0
+|   |   |   |   Chol < 310.5 : No (2/0)
+|   |   |   |   Chol >= 310.5 : Yes (1/0)
+|   |   |   Ca = 1.0
+|   |   |   |   ExAng < 0.5 : Yes (3/0)
+|   |   |   |   ExAng >= 0.5 : No (1/0)
+|   |   |   Ca = NA : No (1/0)
+Oldpeak >= 1.7
+|   Ca = 0.0
+|   |   MaxHR < 137
+|   |   |   Sex < 0.5
+|   |   |   |   ChestPain = typical : No (1/0)
+|   |   |   |   ChestPain = asymptomatic : Yes (2/0)
+|   |   |   |   ChestPain = nonanginal : No (0/0)
+|   |   |   |   ChestPain = nontypical : No (0/0)
+|   |   |   Sex >= 0.5 : Yes (7/0)
+|   |   MaxHR >= 137
+|   |   |   Oldpeak < 2.6
+|   |   |   |   ChestPain = typical : No (3/0)
+|   |   |   |   ChestPain = asymptomatic : No (1/0)
+|   |   |   |   ChestPain = nonanginal : No (2/0)
+|   |   |   |   ChestPain = nontypical : Yes (1/0)
+|   |   |   Oldpeak >= 2.6
+|   |   |   |   MaxHR < 184.5
+|   |   |   |   |   MaxHR < 151.5
+|   |   |   |   |   |   MaxHR < 144.5 : Yes (2/0)
+|   |   |   |   |   |   MaxHR >= 144.5
+|   |   |   |   |   |   |   Chol < 219.5 : No (1/0)
+|   |   |   |   |   |   |   Chol >= 219.5
+|   |   |   |   |   |   |   |   ChestPain = typical : No (1/0)
+|   |   |   |   |   |   |   |   ChestPain = asymptomatic : No (0/0)
+|   |   |   |   |   |   |   |   ChestPain = nonanginal : Yes (1/0)
+|   |   |   |   |   |   |   |   ChestPain = nontypical : No (0/0)
+|   |   |   |   |   MaxHR >= 151.5 : Yes (3/0)
+|   |   |   |   MaxHR >= 184.5 : No (1/0)
+|   Ca = 3.0
+|   |   ChestPain = typical : No (0/0)
+|   |   ChestPain = asymptomatic : Yes (8/0)
+|   |   ChestPain = nonanginal
+|   |   |   Age < 55.5 : Yes (1/0)
+|   |   |   Age >= 55.5
+|   |   |   |   RestBP < 135 : No (1/0)
+|   |   |   |   RestBP >= 135 : Yes (1/0)
+|   |   ChestPain = nontypical : No (0/0)
+|   Ca = 2.0
+|   |   Thal = fixed : Yes (2/0)
+|   |   Thal = normal
+|   |   |   Slope < 1.5 : No (1/0)
+|   |   |   Slope >= 1.5
+|   |   |   |   Sex < 0.5
+|   |   |   |   |   Age < 63.5 : Yes (2/0)
+|   |   |   |   |   Age >= 63.5 : No (1/0)
+|   |   |   |   Sex >= 0.5 : Yes (2/0)
+|   |   Thal = reversable : Yes (13/0)
+|   |   Thal = NA : No (0/0)
+|   Ca = 1.0
+|   |   Age < 48.5 : No (1/0)
+|   |   Age >= 48.5 : Yes (15/0)
+|   Ca = NA : No (0/0)
+
+Size of the tree : 171
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         229               75.5776 %
+Incorrectly Classified Instances        74               24.4224 %
+Kappa statistic                          0.5098
+Mean absolute error                      0.2462
+Root mean squared error                  0.4947
+Relative absolute error                 49.5639 %
+Root relative squared error             99.2677 %
+Total Number of Instances              303     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.756     0.245      0.785     0.756     0.77       0.753    No
+                 0.755     0.244      0.724     0.755     0.739      0.753    Yes
+Weighted Avg.    0.756     0.244      0.757     0.756     0.756      0.753
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 124  40 |   a = No
+  34 105 |   b = Yes
+

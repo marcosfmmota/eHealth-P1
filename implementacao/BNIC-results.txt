@@ -1,0 +1,76 @@
+=== Run information ===
+
+Scheme:weka.classifiers.bayes.BayesNet -Q weka.classifiers.bayes.net.search.ci.ICSSearchAlgorithm -- -S BAYES -cardinality 2 -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
+Relation:     Heart-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    303
+Attributes:   14
+              Age
+              Sex
+              ChestPain
+              RestBP
+              Chol
+              Fbs
+              RestECG
+              MaxHR
+              ExAng
+              Oldpeak
+              Slope
+              Ca
+              Thal
+              AHD
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Bayes Network Classifier
+Using ADTree
+#attributes=14 #classindex=13
+Network structure (nodes followed by parents)
+Age(2): 
+Sex(2): 
+ChestPain(4): 
+RestBP(1): 
+Chol(1): 
+Fbs(1): 
+RestECG(1): 
+MaxHR(2): Age ExAng 
+ExAng(2): ChestPain 
+Oldpeak(2): Slope 
+Slope(2): MaxHR 
+Ca(5): 
+Thal(4): Sex 
+AHD(2): Age Sex ChestPain MaxHR ExAng Oldpeak Slope Ca Thal 
+LogScore Bayes: -2247.70532231223
+LogScore BDeu: -47248.59509207075
+LogScore MDL: -20403.657711061638
+LogScore ENTROPY: -5699.366336083273
+LogScore AIC: -10846.366336083276
+
+
+Time taken to build model: 0.08 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         221               72.9373 %
+Incorrectly Classified Instances        82               27.0627 %
+Kappa statistic                          0.4403
+Mean absolute error                      0.3449
+Root mean squared error                  0.4016
+Relative absolute error                 69.4378 %
+Root relative squared error             80.5881 %
+Total Number of Instances              303     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.896     0.468      0.693     0.896     0.782      0.848    No
+                 0.532     0.104      0.813     0.532     0.643      0.848    Yes
+Weighted Avg.    0.729     0.301      0.748     0.729     0.718      0.848
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 147  17 |   a = No
+  65  74 |   b = Yes
+
